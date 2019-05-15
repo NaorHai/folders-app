@@ -1,0 +1,15 @@
+<div class="dir">
+  <div class="dir-state">
+    <div (click)="toggleState()">
+      <i class="fa fa-folder icon" *ngIf="!entry.state"></i>
+      <i class="fa fa-folder-open icon" *ngIf="entry.state"></i>
+      <i class="fa fa-chevron-right icon" *ngIf="!entry.state"></i>
+      <i class="fa fa-chevron-down icon" *ngIf="entry.state"></i>
+      <span class="dir-name">{{entry.name}}</span>
+    </div>
+    <div class="content padding-entry" *ngIf="entry.state">
+      <app-item *ngFor="let child of entry.children" [entry]="child"></app-item>
+    </div>
+  </div>
+</div>
+
