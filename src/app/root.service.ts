@@ -95,6 +95,7 @@ export class RootService {
         this.rootHierarchy.children.splice(childIndex, 1);
       }
     }
+    this.allOptions = this.allOptions.filter(name => name !== dirName);
   }
 
   saveToLocalStorage() {
