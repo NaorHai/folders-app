@@ -86,12 +86,14 @@ export class RootService {
         objParent.children.splice(childIndex, 1);
       }
       //no parent means its a root one
-      this.rootHierarchy.children.forEach((item, i) => {
-        if (item.name === dirName) {
-          childIndex = i;
-        }
-      });
-      this.rootHierarchy.children.splice(childIndex, 1);
+     else{
+        this.rootHierarchy.children.forEach((item, i) => {
+          if (item.name === dirName) {
+            childIndex = i;
+          }
+        });
+        this.rootHierarchy.children.splice(childIndex, 1);
+      }
     }
   }
 
